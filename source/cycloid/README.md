@@ -1,6 +1,8 @@
 # Cycloid
 A cycloid is a mathematical curve traced by a point on the circumference of a circle as it rolls along a straight line. A curtate cycloid, also known as a contracted cycloid, is traced by a point at a radius smaller than the radius of the rolling circle. On the other hand, a prolate cycloid, also known as an extended cycloid, is traced by a point at a radius greater than the radius of the rolling circle. Cycloids have significant applications in various fields, including mathematics, physics, and engineering.
 
+https://github.com/curiouswalk/manim/assets/157306209/a82826b4-18e0-4bc0-a450-a4ddde7190ae
+
 <a href="https://colab.research.google.com/github/curiouswalk/manim/blob/main/source/cycloid/cycloid.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 
