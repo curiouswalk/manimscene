@@ -4,11 +4,11 @@
 Here are some animation scenes rendered from scripts written in Python using the Manim library. 
 
 > [!TIP]
-> Manim in Colab: [`link.curiouswalk.com/manim/colab`](`link.curiouswalk.com/sites`)
+> Manim in Colab: [`link.curiouswalk.com/manim/colab`](https://link.curiouswalk.com/manim/colab)
 > 
-> Project sources: [`link.curiouswalk.com/manim/source`](`link.curiouswalk.com/sites`)
+> Project source: [`link.curiouswalk.com/manim/source`](https://link.curiouswalk.com/manim/source)
 > 
-> Find us on [`link.curiouswalk.com/sites`](`link.curiouswalk.com/sites`)
+> Find us on [`link.curiouswalk.com/sites`](https://link.curiouswalk.com/sites)
 
 ## [Cycloid](source/cycloid)
 
