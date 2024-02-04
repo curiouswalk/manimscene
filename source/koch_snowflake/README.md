@@ -4,15 +4,15 @@ In mathematics, the intriguing concept of self-similarity emerges, wherein an ob
 
 https://github.com/curiouswalk/manim/assets/157306209/aa06927a-fe4d-4dab-aeb9-cccc1e3ae733
 
->[!TIP]
+> [!TIP]
 > This project is done in Jupyter Notebook on Google Colab.
 >
 > <a href="https://colab.research.google.com/github/curiouswalk/manim/blob/main/source/cycloid/cycloid.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Scene Script 
 
->[!NOTE]
-> Save the KochSnowflake class below as `fractal.py` script.
+> [!NOTE]
+> Save the KochSnowflake class as `fractal.py` script.
 
 ```python
 from manim import Polygram
@@ -69,7 +69,7 @@ from fractal import KochSnowflake
  
 config.disable_caching = True
 
-# Changing default font typeface in LaTeX.
+# Changes the default font typeface in LaTeX.
 config.tex_template.add_to_preamble(r"\usepackage{fourier}")
 
 class KochSnowflakeImage(Scene):
@@ -200,10 +200,11 @@ class KochSnowflakeScene2(Scene):
 
             self.wait()
 
-        self.wait()
+        self.wait(0.5)
 
         self.play(FadeOut(txt, ks_grp))
 
+        self.wait(0.25)
 ```
 -----
 
