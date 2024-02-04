@@ -2,7 +2,7 @@
 
 In mathematics, the intriguing concept of self-similarity emerges, wherein an object bears resemblance, either entirety or partially, to a smaller iteration of itself. A remarkable illustration of this phenomenon is the Koch Snowflake, showcasing the beauty of complexity inherent in self-similar geometric patterns.
 
-https://github.com/curiouswalk/manim/assets/157306209/aa06927a-fe4d-4dab-aeb9-cccc1e3ae733
+https://github.com/curiouswalk/manim/assets/157306209/4909c7a3-2431-45d8-aef4-8c45af5d2eeb
 
 > [!TIP]
 > This project is done in Jupyter Notebook on Google Colab.
