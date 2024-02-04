@@ -12,7 +12,7 @@ https://github.com/curiouswalk/manim/assets/157306209/aa06927a-fe4d-4dab-aeb9-cc
 # Scene Script 
 
 > [!NOTE]
-> Save KochSnowflake class as `fractal.py` script.
+> Save KochSnowflake class below as `fractal.py` script.
 
 ```python
 from manim import Polygram
