@@ -15,7 +15,7 @@ Here are some animation scenes rendered from scripts written in Python using the
 
 ## [Koch Snowflake](source/koch_snowflake)
 
-https://github.com/curiouswalk/manim/assets/157306209/aa06927a-fe4d-4dab-aeb9-cccc1e3ae733
+https://github.com/curiouswalk/manim/assets/157306209/4909c7a3-2431-45d8-aef4-8c45af5d2eeb
 
 <p><a href="https://github.com/curiouswalk/manim/tree/main/source/koch_snowflake">
             <img src="https://img.shields.io/badge/Source-link?style=plastic&logo=github&logoColor=white&labelColor=grey&color=green" height="23"
