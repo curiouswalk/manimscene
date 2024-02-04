@@ -7,7 +7,7 @@ https://github.com/curiouswalk/manim/assets/157306209/aa06927a-fe4d-4dab-aeb9-cc
 > [!TIP]
 > This project is done in Jupyter Notebook on Google Colab.
 >
-> <a href="https://colab.research.google.com/github/curiouswalk/manim/blob/main/source/cycloid/cycloid.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+> <a href="https://colab.research.google.com/github/curiouswalk/manim/blob/main/source/koch_snowflake/koch_snowflake.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 # Scene Script 
 
@@ -76,9 +76,9 @@ class KochSnowflakeImage(Scene):
 
     def construct(self):
 
-        n = 3  # level of complexity
+        n = 3 # level of complexity
 
-        sw = 4  # stroke width (decrease for greater n)
+        sw = 4 # stroke width (decrease for greater n)
 
         color = ("#0A68EF", "#4AF1F2")
 
@@ -119,11 +119,9 @@ class KochSnowflakeScene1(Scene):
 
         color = ("#0A68EF", "#4AF1F2")
 
-        ks = KochSnowflake(0, scale=5, stroke_width=6, fill_opacity=0.25).set_color(
-            color
-        )
+        ks = KochSnowflake(0, scale=5, stroke_width=6, fill_opacity=0.25).set_color(color)
 
-        sw = np.linspace(6, 1, 6)  # thinning stroke width
+        sw = np.linspace(6, 1, 6) # thinning stroke width
 
         self.wait(0.25)
 
@@ -173,7 +171,7 @@ class KochSnowflakeScene2(Scene):
 
         ks_grp = VGroup()
 
-        sw = np.linspace(6, 2, 4)  # thinning stroke width
+        sw = np.linspace(6, 2, 4) # thinning stroke width
 
         for i in range(4):
 
