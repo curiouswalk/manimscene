@@ -3,8 +3,12 @@ A cycloid is a mathematical curve traced by a point on the circumference of a ci
 
 https://github.com/curiouswalk/manim/assets/157306209/a82826b4-18e0-4bc0-a450-a4ddde7190ae
 
-<a href="https://colab.research.google.com/github/curiouswalk/manim/blob/main/source/cycloid/cycloid.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+>[!TIP]
+> This project is done in Jupyter Notebook on Google Colab.
+>
+> <a href="https://colab.research.google.com/github/curiouswalk/manim/blob/main/source/cycloid/cycloid.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
+## Scene Script
 
 ```python
 from manim import *
