@@ -2,7 +2,7 @@
 
 # [Manim Animations](source)
 
-*Manim is an animation engine for creating precise programmatic animations.*<br>
+Manim is an animation engine for creating precise programmatic animations.<br>
 Here are some animation scenes rendered from scripts written in Python using the Manim library. 
 
 > [!TIP]
@@ -10,7 +10,7 @@ Here are some animation scenes rendered from scripts written in Python using the
 > 
 > Project source: [`link.curiouswalk.com/manim/source`](https://link.curiouswalk.com/manim/source)
 > 
-> Find us on [`link.curiouswalk.com/sites`](https://link.curiouswalk.com/sites)
+> Find us on [`www.curiouswalk.com`](https://www.curiouswalk.com)
 
 
 ## [Koch Snowflake](source/koch_snowflake)
