@@ -1,5 +1,8 @@
 ![Manim Animations](https://github.com/curiouswalk/manim/assets/157306209/621ec774-a11c-462b-971d-b4a44446ea20)
 
+# [Wave Surface 3D](wave_surface_3d)
+<!-- ![cw_koch_snowflake](https://github.com/curiouswalk/manim/assets/157306209/33df9483-3906-47c4-9c3c-8becea305dc4) -->
+
 # [Koch Snowflake](koch_snowflake)
 ![cw_koch_snowflake](https://github.com/curiouswalk/manim/assets/157306209/33df9483-3906-47c4-9c3c-8becea305dc4)
 
