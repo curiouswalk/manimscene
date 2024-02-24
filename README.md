@@ -6,7 +6,7 @@ Manim is an animation engine for creating precise programmatic animations.<br>
 Here are some animation scenes rendered from scripts written in Python using the Manim library. 
 
 > [!TIP]
-> Manim in Colab: [`link.curiouswalk.com/manim/colab`](https://link.curiouswalk.com/manim/colab)
+> Manim in Colab: [`link.curiouswalk.com/colab/manim`](https://link.curiouswalk.com/colab/manim)
 > 
 > Project Source: [`link.curiouswalk.com/manim`](https://link.curiouswalk.com/manim)
 > 
