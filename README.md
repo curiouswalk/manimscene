@@ -8,10 +8,27 @@ Here are some animation scenes rendered from scripts written in Python using the
 > [!TIP]
 > Manim in Colab: [`link.curiouswalk.com/manim/colab`](https://link.curiouswalk.com/manim/colab)
 > 
-> Project source: [`link.curiouswalk.com/manim/source`](https://link.curiouswalk.com/manim/source)
+> Project Source: [`link.curiouswalk.com/manim`](https://link.curiouswalk.com/manim)
 > 
 > Find us on [`www.curiouswalk.com`](https://www.curiouswalk.com)
 
+## [Wave Surface 3D](source/wave_surface_3d)
+
+**3D Manim Scene**<br>YouTube Overview
+
+[![Watch the video](https://img.youtube.com/vi/x7mstFh2R3s/maxresdefault.jpg)](https://youtu.be/x7mstFh2R3s)
+
+<p><a href="https://github.com/curiouswalk/manim/tree/main/source/wave_surface_3d">
+            <img src="https://img.shields.io/badge/Source-link?style=plastic&logo=github&logoColor=white&labelColor=grey&color=green" height="23"
+            alt="Source"></a>&nbsp;
+<a href="https://colab.research.google.com/github/curiouswalk/manim/blob/main/source/wave_surface_3d/wave_surface_3d.ipynb">
+            <img src="https://img.shields.io/badge/Colab-Colab?style=plastic&logo=googlecolab&labelColor=grey&color=blue" height="23"
+            alt="Colab"></a>&nbsp;
+<a href="https://youtu.be/x7mstFh2R3s">
+            <img src="https://img.shields.io/badge/YouTube-link?style=plastic&logo=youtube&logoColor=red&labelColor=grey&color=red" height="23"
+            alt="YouTube"></a>&nbsp;</p>
+
+This animation features a 3D surface of waves.
 
 ## [Koch Snowflake](source/koch_snowflake)
 
