@@ -4,4 +4,6 @@
 
 #### YouTube Overview
 
-[![Watch the video](https://img.youtube.com/vi/JIZWkmKV01o/maxresdefault.jpg)](https://youtu.be/JIZWkmKV01o)
+[![Watch the video](https://img.youtube.com/vi/x7mstFh2R3s/maxresdefault.jpg)](https://youtu.be/x7mstFh2R3s)
+
+This animation features a 3D surface of waves.
