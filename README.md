@@ -14,7 +14,8 @@ Here are some animation scenes rendered from scripts written in Python using the
 
 ## [Wave Surface 3D](source/wave_surface_3d)
 
-**3D Manim Scene**<br>YouTube Overview
+**3D Manim Scene of Wave Animation**<br>
+YouTube Overview
 
 [![Watch the video](https://img.youtube.com/vi/x7mstFh2R3s/maxresdefault.jpg)](https://youtu.be/x7mstFh2R3s)
 
