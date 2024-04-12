@@ -2,12 +2,17 @@
 #### [`www.curiouswalk.com`](https://www.curiouswalk.com)
 #### [`link.curiouswalk.com/manim`](https://link.curiouswalk.com/manim)
 
-# Manim
-
-Manim is an engine for precise programmatic animations, designed for creating explanatory math videos.
 
 > [!NOTE]
+> **Manim** is an engine for precise programmatic animations, designed for creating explanatory math videos.
+> 
 > The Manim Community Developers. (2024). Manim – Mathematical Animation Framework (Version v0.18.0) [Computer software].  [www.manim.community](https://www.manim.community/)
+
+> [!TIP]
+> This project is done in Jupyter Notebook on Google Colab.
+>
+> <a href="https://colab.research.google.com/github/curiouswalk/manim/blob/main/source/fibonacci_spiral/fibonacci_spiral.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
 
 # Setup
 
