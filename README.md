@@ -2,8 +2,7 @@
 
 # [Manim Animations](source)
 
-Manim is an animation engine for creating precise programmatic animations.<br>
-Here are some animation scenes rendered from scripts written in Python using the Manim library. 
+#### [Manim](https://www.manim.community/) is an animation engine for creating precise programmatic animations.
 
 > [!TIP]
 > Manim in Colab: [`link.curiouswalk.com/colab/manim`](https://link.curiouswalk.com/colab/manim)
@@ -11,6 +10,8 @@ Here are some animation scenes rendered from scripts written in Python using the
 > Project Source: [`link.curiouswalk.com/manim`](https://link.curiouswalk.com/manim)
 > 
 > Find us on [`www.curiouswalk.com`](https://www.curiouswalk.com)
+
+Here are some animation scenes rendered from scripts written in Python using the Manim library.
 
 ## [Fibonacci Spiral](source/fibonacci_spiral)
 
@@ -82,7 +83,6 @@ A cycloid is a mathematical curve traced by a point on the circumference of a ci
 -----
 
 > [!NOTE]
-> **References**
-> 
+> **Manim**<br>
 > The Manim Community Developers. (2024). Manim – Mathematical Animation Framework (Version v0.18.0) [Computer software]. https://www.manim.community/
 >
