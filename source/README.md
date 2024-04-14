@@ -6,6 +6,7 @@
 > The Manim Community Developers. (2024). Manim – Mathematical Animation Framework (Version v0.18.0) [Computer software]. https://www.manim.community/
 
 # [Fibonacci Spiral](fibonacci_spiral)
+![fibonacci_spiral](https://github.com/curiouswalk/manim/assets/157306209/1a0dfd97-5821-484b-a1de-3efc3ef29081)
 
 # [Wave Surface 3D](wave_surface_3d)
 <!-- ![cw_koch_snowflake](https://github.com/curiouswalk/manim/assets/157306209/33df9483-3906-47c4-9c3c-8becea305dc4) -->
