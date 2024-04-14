@@ -1,6 +1,6 @@
 ![Manim Animations](https://github.com/curiouswalk/manim/assets/157306209/621ec774-a11c-462b-971d-b4a44446ea20)
 
-#### [**Manim**](https://www.manim.community/) is an engine for precise programmatic animations, designed for creating explanatory math videos.
+[**Manim**](https://www.manim.community/) is an engine for precise programmatic animations, designed for creating explanatory math videos.
 
 > [!NOTE]
 > The Manim Community Developers. (2024). Manim – Mathematical Animation Framework (Version v0.18.0) [Computer software]. https://www.manim.community/
