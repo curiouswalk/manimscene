@@ -1,8 +1,8 @@
 ![cw_banner](https://github.com/curiouswalk/manim/assets/157306209/fb55d9f6-ab1a-41c4-b565-ccad0521c429)
 
-# [Manim Animations](source)
+# [Manim Animation](source)
 
-#### [Manim](https://www.manim.community/) is an animation engine for creating precise programmatic animations.
+**[Manim](https://www.manim.community/) is an animation engine for creating precise programmatic animations.**
 
 > [!TIP]
 > Manim in Colab: [`link.curiouswalk.com/colab/manim`](https://link.curiouswalk.com/colab/manim)
