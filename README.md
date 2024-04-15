@@ -1,4 +1,4 @@
-![cw_banner](https://github.com/curiouswalk/manim/assets/157306209/fb55d9f6-ab1a-41c4-b565-ccad0521c429)
+[![cw_banner](https://github.com/curiouswalk/manim/assets/157306209/50a0b7f9-ff06-45d3-a154-64504e369484)](https://www.curiouswalk.com)
 
 # [Manim Animation](source)
 
