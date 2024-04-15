@@ -1,4 +1,4 @@
-![Manim Animations](https://github.com/curiouswalk/manim/assets/157306209/621ec774-a11c-462b-971d-b4a44446ea20)
+![cw_manim_banner](https://github.com/curiouswalk/manim/assets/157306209/2a7bd196-c0ef-4fad-9397-8ff0a7eb74ba)
 
 [**Manim**](https://www.manim.community/) is an engine for precise programmatic animations, designed for creating explanatory math videos.
 
