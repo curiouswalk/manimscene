@@ -1,152 +1,242 @@
 # Cycloid
 A cycloid is a mathematical curve traced by a point on the circumference of a circle as it rolls along a straight line. A curtate cycloid, also known as a contracted cycloid, is traced by a point at a radius smaller than the radius of the rolling circle. On the other hand, a prolate cycloid, also known as an extended cycloid, is traced by a point at a radius greater than the radius of the rolling circle. Cycloids have significant applications in various fields, including mathematics, physics, and engineering.
 
-https://github.com/curiouswalk/manim/assets/157306209/a82826b4-18e0-4bc0-a450-a4ddde7190ae
+https://github.com/user-attachments/assets/be572ccc-be52-4768-9944-0cb2e362dc98
 
 >[!TIP]
 > This project is done in Jupyter Notebook on Google Colab.
 >
 > <a href="https://colab.research.google.com/github/curiouswalk/manim/blob/main/source/cycloid/cycloid.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
-## Scene Script
+# Scripts
+
+## Imports
 
 ```python
 from manim import *
-
 config.disable_caching = True
+config.media_embed = True
+```
+## Initialization
+Run this to get started.
+```python
+frame_width = config.frame_width
 
-class Cycloid(Scene):
+length = frame_width * 0.8
+
+num_line = NumberLine(x_range=[-TAU, TAU, PI], length=length, color="#a3aea7").to_edge(
+    DOWN, buff=2
+)
+circle_radius = length / (TAU * 2)
+
+circle = Circle(radius=circle_radius, color="#00FFFB").next_to(
+    num_line.get_start(), UP, buff=0.25
+)
+dashed_circle = DashedVMobject(circle)
+
+dot = Dot(color=circle.color).move_to(circle)
+
+point = Dot(radius=0.1, color=circle.color).move_to(circle)
+
+line = Line(dot, point, color="#a3aea7", stroke_opacity=[0.25, 1, 0.25])
+
+update_mob = VGroup(dashed_circle, line, point)
+
+trail = TracedPath(
+    dot.get_center, dissipating_time=0.15, stroke_color=dot.color, stroke_width=4
+)
+dot_x = dot.get_x()
+
+radius = ValueTracker(0.0)
+
+def updater_function(mob):
+
+    angle = PI / 2 - (dot.get_x() - dot_x) / circle_radius
+
+    pos = dot.get_center() + (
+        np.cos(angle) * radius.get_value(),
+        np.sin(angle) * radius.get_value(),
+        0.0,
+    )
+    mob[0].move_to(dot.get_center())
+
+    mob[1].become(
+        Line(dot.get_center(), pos, color="#a3aea7", stroke_opacity=[0.25, 1, 0.25])
+    )
+    mob[2].move_to(pos)
+
+
+mobjects = VGroup(update_mob, num_line, trail, dot)
+
+def anim_point_radius(self, r, color=circle.color, anim=None, rt=1.5):
+    update_mob.add_updater(updater_function)
+    anim_list = [
+        radius.animate.set_value(r * circle_radius),
+        point.animate.set_color(color),
+    ]
+    if anim:
+        anim_list.append(anim)
+    self.play(*anim_list, run_time=rt)
+
+def anim_trace_path(self, rt=3):
+
+    path_forward = TracedPath(
+        point.get_center, stroke_color=point.color, stroke_width=6
+    )
+    self.add(path_forward)
+
+    self.play(
+        dot.animate.shift(RIGHT * length),
+        Rotate(dashed_circle, -2 * TAU),
+        run_time=rt,
+        rate_func=linear,
+    )
+    self.wait(0.5)
+    path_forward.clear_updaters()
+    path_return = path_forward.copy()
+    self.play(path_forward.animate(run_time=1.5).fade(2 / 3))
+    path_forward.clear_updaters()
+    self.wait(0.5)
+
+    path_backward = TracedPath(
+        point.get_center,
+        dissipating_time=1 / 3,
+        stroke_color=point.color,
+        stroke_width=6,
+    )
+    self.add(path_backward)
+
+    self.play(
+        FadeOut(path_forward),
+        dot.animate.shift(LEFT * length),
+        Rotate(dashed_circle, 2 * TAU),
+        rate_func=linear,
+        run_time=rt,
+    )
+    self.wait(0.5)
+    path_backward.clear_updaters()
+    self.remove(path_backward)
+    return path_return
+
+```
+## Animation Scenes
+
+### Cycloid Scene
+Learn more from **MathWorld** — A Wolfram Web Resource.\
+[mathworld.wolfram.com/Cycloid.html](https://mathworld.wolfram.com/Cycloid.html)
+
+https://github.com/user-attachments/assets/f09a9ff0-2023-4548-87e3-4358a6c4eb08
+
+```python
+%%manim CycloidScene
+
+class CycloidScene(Scene):
 
     def construct(self):
 
-        frame_width = config.frame_width
+        self.add(mobjects)
 
-        length = frame_width * 0.8
+        txt = Text("Cycloid").to_edge(UP, buff=1)
 
-        numline = NumberLine(
-            x_range=[-TAU, TAU, PI], length=length, color="#a3aea7"
-        ).to_edge(DOWN, buff=1.5)
+        path_color = "#7B00FF"
 
-        circle = Circle(radius=length / (TAU * 2), color="#00ffff").next_to(
-            numline.get_start(), UP, buff=0.25
-        )
+        anim_point_radius(self, r=1, color=path_color, anim=Write(txt))
 
-        cc = Dot(color=circle.color).move_to(circle)
+        self.wait()
 
-        p = Dot(radius=0.1, color=circle.color).move_to(circle)
+        anim_trace_path(self)
 
-        line = Line(cc, p, color="#a3aea7", stroke_opacity=[0.25, 1, 0.25])
+        self.wait()
 
-        lp = VGroup(line, p)
+        anim_point_radius(self, r=-1, color=path_color)
 
-        trail = TracedPath(
-            cc.get_center, dissipating_time=0.2, stroke_color=cc.color, stroke_width=4
-        )
-        cix = circle.get_x()
+        self.wait()
 
-        cr = circle.radius
+        anim_trace_path(self)
 
-        pr = ValueTracker(0.0)
+        self.wait()
 
-        cycloids = VGroup()
-
-        def update_function(m):
-
-            angle = PI / 2 - (circle.get_x() - cix) / cr
-
-            pos = (
-                circle.get_center()
-                + np.array([np.cos(angle), np.sin(angle), 0.0]) * pr.get_value()
-            )
-            m[0].put_start_and_end_on(circle.get_center(), pos)
-
-            m[1].move_to(pos)
-
-        def play_animation(txt, radius, color):
-            text = Tex(txt).scale(1.25).to_edge(UP, buff=0.75)
-
-            self.play(
-                pr.animate.set_value(radius),
-                FadeIn(text),
-                p.animate.set_color(color),
-                run_time=1.5,
-            )
-
-            self.wait(1)
-
-            path = TracedPath(p.get_center, stroke_color=p.color, stroke_width=5)
-
-            self.add(path)
-
-            trail.set_stroke(opacity=[1, 0])
-
-            self.play(
-                circle.animate(run_time=2.5, rate_func=linear).shift(RIGHT * length)
-            )
-
-            self.wait(2)
-
-            path.clear_updaters()
-
-            cycloids.add(path.copy())
-
-            trail.set_stroke(opacity=[0, 1])
-            self.play(
-                circle.animate(rate_func=linear, run_time=2.5).shift(LEFT * length)
-            )
-            self.wait(1)
-            self.play(FadeOut(path), FadeOut(text), run_time=1.5)
-
-            self.wait(0.5)
-
-        self.wait(0.25)
-
-        self.play(
-            Create(numline, lag_ratio=0),
-            Create(circle),
-            FadeIn(lp, cc, scale=0),
-            run_time=1.5,
-        )
-
-        self.wait(1)
-
-        self.add(trail)
-        circle.add(cc)
-
-        lp.add_updater(update_function)
-
-        play_animation(txt="Cycloid", radius=cr, color="#ffff00")
-
-        play_animation(txt="Prolate Cycloid", radius=cr * 1.5, color="#ff0000")
-
-        play_animation(txt="Curtate Cycloid", radius=cr * 0.5, color="#0000ff")
+        anim_point_radius(self, r=0, anim=Unwrite(txt))
 
         self.wait(0.5)
+```
 
-        self.play(pr.animate.set_value(0.0), p.animate.set_color(circle.color))
+### Prolate Cycloid Scene
+Learn more from **MathWorld** — A Wolfram Web Resource.\
+[mathworld.wolfram.com/ProlateCycloid.html](https://mathworld.wolfram.com/ProlateCycloid.html)
 
-        VGroup(trail, lp).clear_updaters()
-        circle.remove(cc)
+https://github.com/user-attachments/assets/240ba4ab-e1a3-4df0-819d-259de08018e2
+
+```python
+%%manim ProlateCycloidScene
+
+class ProlateCycloidScene(Scene):
+
+    def construct(self):
+
+        self.add(mobjects)
+
+        txt = Text("Prolate Cycloid").to_edge(UP, buff=1)
+
+        path_color = "#FF0004"
+
+        anim_point_radius(self, r=1.75, color=path_color, anim=Write(txt))
+
+        self.wait()
+
+        anim_trace_path(self)
+
+        self.wait()
+
+        anim_point_radius(self, r=-2, color=path_color)
+
+        self.wait()
+
+        anim_trace_path(self)
+
+        self.wait()
+
+        anim_point_radius(self, r=0, anim=Unwrite(txt))
 
         self.wait(0.5)
+```
 
-        self.play(
-            Uncreate(circle),
-            FadeOut(cc, lp, scale=0),
-            Uncreate(numline, lag_ratio=0),
-            run_time=1.5,
-        )
+### Curtate Cycloid Scene
+Learn more from **MathWorld** — A Wolfram Web Resource.\
+[mathworld.wolfram.com/CurtateCycloid.html](https://mathworld.wolfram.com/CurtateCycloid.html)
 
-        cycloids.scale_to_fit_width(frame_width).set_stroke(opacity=[0, 1, 0]).center()
+https://github.com/user-attachments/assets/bdc06918-dfda-4af3-9aaa-d7572bb6c7e3
 
-        self.wait(1)
+```python
+%%manim CurtateCycloidScene
 
-        self.play(Create(cycloids, lag_ratio=0, rate_func=linear, run_time=2.5))
+class CurtateCycloidScene(Scene):
 
-        self.wait(2)
+    def construct(self):
 
-        self.play(Uncreate(cycloids, lag_ratio=0, rate_func=linear, run_time=2.5))
+        self.add(mobjects)
 
-        self.wait(0.25)
+        txt = Text("Curtate Cycloid").to_edge(UP, buff=1)
 
+        path_color= "#84FF00"
+
+        anim_point_radius(self, r=0.5, color=path_color, anim=Write(txt))
+
+        self.wait()
+
+        anim_trace_path(self)
+
+        self.wait()
+
+        anim_point_radius(self, r=-0.375, color=path_color)
+
+        self.wait()
+
+        anim_trace_path(self)
+
+        self.wait()
+
+        anim_point_radius(self, r=0, anim=Unwrite(txt))
+
+        self.wait(0.5)
 ```
