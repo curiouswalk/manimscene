@@ -1,28 +1,36 @@
 # Cycloid
-A cycloid is a mathematical curve traced by a point on the circumference of a circle as it rolls along a straight line. A curtate cycloid, also known as a contracted cycloid, is traced by a point at a radius smaller than the radius of the rolling circle. On the other hand, a prolate cycloid, also known as an extended cycloid, is traced by a point at a radius greater than the radius of the rolling circle. Cycloids have significant applications in various fields, including mathematics, physics, and engineering.
+A cycloid is a mathematical curve traced by a point on the circumference of a circle as it rolls along a straight line. A prolate cycloid, also known as an extended cycloid, is traced by a point at a radius greater than the radius of the rolling circle. A curtate cycloid, also known as a contracted cycloid, is traced by a point at a radius smaller than the radius of the rolling circle. Cycloids have significant applications in various fields, including mathematics, physics, and engineering.
 
-https://github.com/user-attachments/assets/be572ccc-be52-4768-9944-0cb2e362dc98
+https://github.com/user-attachments/assets/d0735dd5-2a62-4c55-9f7b-7608d74439b8
 
 >[!TIP]
 > This project is done in Jupyter Notebook on Google Colab.
 >
-> <a href="https://colab.research.google.com/github/curiouswalk/manim/blob/main/source/cycloid/cycloid.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+> <a href="https://colab.research.google.com/github/curiouswalk/manim/blob/main/source/cycloid/cycloid.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" height="23px" alt="Open In Colab"/></a>
 
-# Scripts
+# Animation Script
 
-## Imports
+## Setup
+
+[Installation Guide](https://docs.manim.community/en/stable/installation.html)
+
+**Manim in Colab**\
+[`colab.curiouswalk.com/manim`](https://colab.curiouswalk.com/manim)
+
+## Import
 
 ```python
 from manim import *
 config.disable_caching = True
 config.media_embed = True
 ```
-## Initialization
-Run this to get started.
-```python
-frame_width = config.frame_width
 
-length = frame_width * 0.8
+## Initialization
+
+Run this to get started.
+
+```python
+length = config.frame_width * 0.8
 
 num_line = NumberLine(x_range=[-TAU, TAU, PI], length=length, color="#a3aea7").to_edge(
     DOWN, buff=2
@@ -117,8 +125,8 @@ def anim_trace_path(self, rt=3):
     path_backward.clear_updaters()
     self.remove(path_backward)
     return path_return
-
 ```
+
 ## Animation Scenes
 
 ### Cycloid Scene
@@ -237,6 +245,110 @@ class CurtateCycloidScene(Scene):
         self.wait()
 
         anim_point_radius(self, r=0, anim=Unwrite(txt))
+
+        self.wait(0.5)
+```
+
+## Cycloid Animation
+
+Here is the complete animation. If anything goes wrong, please reinitialize (rerun initialization).
+
+https://github.com/user-attachments/assets/f26d2fb7-b940-452b-88af-0e05dd33d898
+
+```python
+%%manim Cycloid
+
+class Cycloid(Scene):
+
+    def construct(self):
+
+        update_mob, num_line, trail, dot = mobjects
+
+        dashed_circle, line, point = update_mob
+
+        vgroup = VGroup(VGroup(dashed_circle, point), num_line)
+
+        vgroup_copy = vgroup.copy()
+
+        vgroup.save_state()
+
+        vgroup.arrange(DOWN, buff=1)
+
+        self.play(
+            Create(dashed_circle), GrowFromCenter(point), Create(num_line, lag_ratio=0)
+        )
+
+        self.wait(1.5)
+
+        self.play(Restore(vgroup))
+
+        self.add(mobjects)
+
+        text = [
+            Text(txt).to_edge(UP, buff=1)
+            for txt in ("Cycloid", "Prolate Cycloid", "Curtate Cycloid")
+        ]
+
+        self.wait(0.5)
+
+        anim_point_radius(self, r=1, color="#7B00FF", anim=Write(text[0]))
+
+        self.wait(1.5)
+
+        cycloid_path = anim_trace_path(self)
+
+        self.wait()
+
+        anim_point_radius(
+            self, r=5/3, color="#FF0004", anim=ReplacementTransform(text[0], text[1])
+        )
+
+        self.wait(1.5)
+
+        prolate_cycloid_path = anim_trace_path(self)
+
+        self.wait()
+
+        anim_point_radius(
+            self, r=1/3, color="#84FF00", anim=ReplacementTransform(text[1], text[2])
+        )
+
+        self.wait(1.5)
+
+        curtate_cycloid_path = anim_trace_path(self)
+
+        self.wait()
+
+        anim_point_radius(self, r=0, anim=Unwrite(text[2]))
+
+        self.wait()
+
+        self.remove(mobjects)
+
+        self.add(vgroup_copy)
+
+        dashed_circle_copy, point_copy = vgroup_copy[0]
+        num_line_copy = vgroup_copy[1]
+
+        cycloids = VGroup(cycloid_path, prolate_cycloid_path, curtate_cycloid_path)
+
+        anim_one = AnimationGroup(
+            Uncreate(dashed_circle_copy, run_time=1.5),
+            ShrinkToCenter(point_copy, run_time=1.5),
+            Create(cycloids, lag_ratio=0, rate_func=linear, run_time=3),
+        )
+
+        anim_two = AnimationGroup(
+            Uncreate(cycloids, lag_ratio=0, rate_func=linear, run_time=3),
+            Uncreate(num_line_copy, lag_ratio=0, run_time=1.5),
+            lag_ratio=0.5,
+        )
+
+        self.play(anim_one)
+
+        self.wait(2)
+
+        self.play(anim_two)
 
         self.wait(0.5)
 ```
