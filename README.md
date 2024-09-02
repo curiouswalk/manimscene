@@ -66,7 +66,7 @@ In mathematics, the intriguing concept of self-similarity emerges, wherein an ob
 
 ## [Cycloid](source/cycloid)
 
-https://github.com/curiouswalk/manim/assets/157306209/a82826b4-18e0-4bc0-a450-a4ddde7190ae
+https://github.com/user-attachments/assets/994d9d55-bf86-4893-802f-79fd635cc27c
 
 <p><a href="https://github.com/curiouswalk/manim/tree/main/source/cycloid">
             <img src="https://img.shields.io/badge/Source-link?style=plastic&logo=github&logoColor=white&labelColor=grey&color=green" height="23"
