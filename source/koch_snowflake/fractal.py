@@ -2,7 +2,7 @@ from manim import Polygram
 import numpy as np
 
 class KochSnowflake(Polygram):
-    """A Koch Snowflake. It inherits from Polygram class.
+    """A Koch Snowflake at the given level of complexity.
 
     Source:
       https://matplotlib.org/stable/gallery/lines_bars_and_markers/fill.html
@@ -10,7 +10,7 @@ class KochSnowflake(Polygram):
     Args:
       level (int): The recursion depth (level of complexity). Defaults to 0.
       scale (float): The extent of the snowflake (edge length of the base triangle). Defaults to 4.0.
-      **kwargs: Arbitrary keyword arguments.
+      **kwargs: Additional keyword arguments passed to the Polygram constructor.
     """
 
     def __init__(self, level=0, scale=4, **kwargs) -> None:
@@ -37,6 +37,6 @@ class KochSnowflake(Polygram):
         points = _koch_snowflake_complex(level)
         x, y = points.real, points.imag
         z = np.zeros(points.size)
-        vertex_groups = np.stack((x, y, z), axis=-1)
+        vertices = np.stack((x, y, z), axis=-1)
 
-        super().__init__(vertex_groups, **kwargs)
+        super().__init__(vertices, **kwargs)
