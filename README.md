@@ -50,7 +50,7 @@ This animation features a 3D surface of waves.
 
 ## [Koch Snowflake](source/koch_snowflake)
 
-https://github.com/curiouswalk/manim/assets/157306209/4909c7a3-2431-45d8-aef4-8c45af5d2eeb
+https://github.com/user-attachments/assets/6208abcb-9d67-4fec-889c-eaff45afd811
 
 <p><a href="https://github.com/curiouswalk/manim/tree/main/source/koch_snowflake">
             <img src="https://img.shields.io/badge/Source-link?style=plastic&logo=github&logoColor=white&labelColor=grey&color=green" height="23"
@@ -62,7 +62,7 @@ https://github.com/curiouswalk/manim/assets/157306209/4909c7a3-2431-45d8-aef4-8c
             <img src="https://img.shields.io/badge/YouTube-link?style=plastic&logo=youtube&logoColor=red&labelColor=grey&color=red" height="23"
             alt="YouTube"></a>&nbsp;</p>
 
-In mathematics, the intriguing concept of self-similarity emerges, wherein an object bears resemblance, either entirety or partially, to a smaller iteration of itself. A remarkable illustration of this phenomenon is the Koch Snowflake, showcasing the beauty of complexity inherent in self-similar geometric patterns.
+In mathematics, the intriguing concept of self-similarity emerges, wherein an object bears resemblance, either entirety or partially, to a smaller iteration of itself. A remarkable illustration of this phenomenon is the Koch Snowflake, showcasing the beauty of complexity inherent in self-similar geometric patterns. It is created by repeatedly dividing each side of an equilateral triangle into three segments and replacing the middle segment with a smaller equilateral triangle. This process leads to a shape with an infinite perimeter enclosing a finite area.
 
 ## [Cycloid](source/cycloid)
 
